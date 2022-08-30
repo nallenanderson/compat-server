@@ -9,7 +9,7 @@ const getHeaders = (req, next) => {
   const token = req.headers.authorization.split(' ')[1];
 
   if (token !== process.env.TOKEN) {
-    console.log('There is a big problem')!
+    console.log('There is a big problem!');
     return;
   } else {
     console.log('Woohoo. Your token is', token);

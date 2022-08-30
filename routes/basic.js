@@ -5,15 +5,17 @@ const url = process.env.BASE_URL;
 
 const router = express.Router();
 
-const getHeaders = (req) => console.log(JSON.stringify(req.headers));
+const getHeaders = (req) => {
 
-router.get('/', async (req, res) => {
+};
+
+router.get('/', async (req, res, next) => {
   getHeaders(req);
   res.status(200).send({ message: 'You did it!' });
 });
 
-router.get('/users', (req, res) => {
-  getHeaders(req)
+router.get('/users', (req, res, next) => {
+  getHeaders(req);
   res.status(200).send({
     users: [
       {
